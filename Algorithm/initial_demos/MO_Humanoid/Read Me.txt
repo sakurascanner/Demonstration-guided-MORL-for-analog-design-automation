@@ -1,0 +1,1 @@
+The demo used for training is the 25th last demonstration from each preference.

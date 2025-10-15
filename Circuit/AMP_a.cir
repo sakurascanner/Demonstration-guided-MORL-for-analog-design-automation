@@ -1,0 +1,29 @@
+.inc param
+.subckt AMP Vinp Vinn VDD VSS Vout
+XM1 net2 Vinp net3 VSS sky130_fd_pr__nfet_01v8 L=l1 W=w1 nf=1 m=10
+XM2 net1 Vinn net3 VSS sky130_fd_pr__nfet_01v8 L=l1 W=w1 nf=1 m=10
+XM9 net3 vbn1 VSS VSS sky130_fd_pr__nfet_01v8 L=l9 W=w9*2 nf=1 m=1
+
+XM3 net4 vbn2 net2 VSS sky130_fd_pr__nfet_01v8 L=l34 W=w34 nf=1 m=1
+XM4 Vout vbn2 net1 VSS sky130_fd_pr__nfet_01v8 L=l34 W=w34 nf=1 m=1
+XM5 net4 vbp net6 VDD sky130_fd_pr__pfet_01v8_lvt L=l56 W=w56 nf=1 m=1
+XM6 Vout vbp net5 VDD sky130_fd_pr__pfet_01v8_lvt L=l56 W=w56 nf=1 m=1
+XM7 net6 net4 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=l78 W=w78 nf=1 m=1
+XM8 net5 net4 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=l78 W=w78 nf=1 m=1
+
+R1 1 VSS sky130_fd_pr__res_generic_nd R
+XB1 1 1 VDD VDD sky130_fd_pr__pfet_01v8 L=lb W=wb nf=1 m=1
+XB2 2 1 VDD VDD sky130_fd_pr__pfet_01v8 L=lb W=wb nf=1 m=1
+XB4 vbn2 1 VDD VDD sky130_fd_pr__pfet_01v8 L=lb W=wb nf=1 m=1
+XB3 2 2 VSS VSS sky130_fd_pr__nfet_01v8 L=l9 W=w9/10/k nf=1 m=1
+XB9 3 vbn1 VSS VSS sky130_fd_pr__nfet_01v8 L=l9 W=w9/k nf=1 m=1
+XB10 4 vbn1 VSS VSS sky130_fd_pr__nfet_01v8 L=l9 W=w9/k nf=1 m=1
+XB5 vbp vbp VDD VDD sky130_fd_pr__pfet_01v8_lvt L=l56 W=w56/10/k nf=1 m=1
+XB6 vbn2 vbn2 vbn1 VSS sky130_fd_pr__nfet_01v8 L=l34 W=w34/k nf=1 m=1
+XB7 vbn1 2 3 VSS sky130_fd_pr__nfet_01v8 L=l9 W=w9/k nf=1 m=1
+XB8 vbp 2 4 VSS sky130_fd_pr__nfet_01v8 L=l9 W=w9/k nf=1 m=1
+
+*XM10 Vout net7 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=l10 W=w10 nf=1 m=1
+*XM11 net7 vbn2 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=l11 W=w11 nf=1 m=1
+*XM12 net7 net3 VSS VSS sky130_fd_pr__nfet_01v8 L=l12 W=w12 nf=1 m=1
+.ends AMP

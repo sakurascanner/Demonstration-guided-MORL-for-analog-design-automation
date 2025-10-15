@@ -1,0 +1,4 @@
+i(vmeas) = 1.782430e-04
+../Circuit/ngspice-43/release/src/ngspice ./2_B/AMP_CMRR.cir 
+../Circuit/ngspice-43/release/src/ngspice ../Algorithm/2_B/AMP_CMRR.cir 
+../Circuit/ngspice-43/release/src/ngspice ../Circuit/AMP_CMRR.cir
